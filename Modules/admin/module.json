@@ -1,0 +1,14 @@
+{
+    "name": "admin",
+    "alias": "admin",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\admin\\Providers\\adminServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
+
