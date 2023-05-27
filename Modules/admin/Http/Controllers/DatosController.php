@@ -3,6 +3,8 @@
 namespace Modules\admin\Http\Controllers;
 
 use App\Http\Controllers\RestController;
+use GuzzleHttp\Client;
+use Illuminate\Http\Request;
 use Modules\admin\Models\Datos;
 
 class DatosController extends RestController
@@ -18,6 +20,18 @@ class DatosController extends RestController
         $classnamespaceservice='Modules\admin\Services\DatosService';
         $this->modelClass=new $classnamespace ;
         $this->service= new $classnamespaceservice(new $classnamespace);
+    }
+
+    public function index(Request $request)
+    {
+        $result = Datos::query()->get()->all();
+        foreach ($result as $p) {
+            $client = new Client();
+            $res = $client->request('GET', 'https://api.nationalize.io', ['query' => ['name' => $p->nombre]]);
+            $resp = json_decode($res->getBody()->getContents());
+            $p->nationality=count($resp->country)>0?$resp->country[0]->country_id:"No tiene";
+        }
+        return $result;
     }
 
     function info(){
