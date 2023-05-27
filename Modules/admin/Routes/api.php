@@ -22,6 +22,7 @@ use Illuminate\Http\Request;
         /*Datos*/
                Route::post('datos/validate', 'DatosController@validate_model');
                Route::post('datos/update_multiple', 'DatosController@update_multiple');
+               Route::get('datos/info', 'DatosController@info');
                Route::delete('datos/delete_by_id', 'DatosController@deletebyid');
                Route::resource('datos', 'DatosController');
 
