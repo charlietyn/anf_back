@@ -12,6 +12,6 @@
 
 
 - 1-Correr `composer install`
-- 2-Correr comando `php artisan migrate`
+- 2-Correr comando `php artisan migrate` para las migraciones
 - 3-correr el fichero `init.bat` 
-- 4-comando de laravel `php artisan migrate`
+- 4-Correr comando de laravel `php artisan serve` para levantar el sevidor
