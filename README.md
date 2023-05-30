@@ -15,3 +15,4 @@
 - 2-Correr comando `php artisan migrate` para las migraciones
 - 3-correr el fichero `init.bat` 
 - 4-Correr comando de laravel `php artisan serve` para levantar el sevidor
+- 5-Correr fichero jwt.bat
